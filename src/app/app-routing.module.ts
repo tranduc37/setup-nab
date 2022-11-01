@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './template-admin-pages/menu-pages/home/home.component';
-import { TemplateAdminComponents } from './template-admin-pages/template-admin.component';
+import { ExtraOptions, RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './pages/menu-pages/home/home.component';
+import { TemplateAdminComponents } from './pages/template-admin.component';
 
 const routes: Routes = [
   {
@@ -14,12 +14,50 @@ const routes: Routes = [
       },
     ]
   },
+
+  // {
+  //   path: 'auth',
+  //   component: NbAuthComponent,
+  //   children: [
+  //     {
+  //       path: '',
+  //       component: NbLoginComponent,
+  //     },
+  //     {
+  //       path: 'login',
+  //       component: NbLoginComponent,
+  //     },
+  //     {
+  //       path: 'register',
+  //       component: NbRegisterComponent,
+  //     },
+  //     {
+  //       path: 'logout',
+  //       component: NbLogoutComponent,
+  //     },
+  //     {
+  //       path: 'request-password',
+  //       component: NbRequestPasswordComponent,
+  //     },
+  //     {
+  //       path: 'reset-password',
+  //       component: NbResetPasswordComponent,
+  //     },
+  //   ],
+  // },
   {
-    path: '',
+    path: 'pages',
     loadChildren: () =>
-      import('./template-admin-pages/template-admin-pages-module').then((m) => m.TemplateAdminModule),
+      import('./pages/template-admin-pages-module').then((m) => m.TemplateAdminModule),
   },
+  { path: '', redirectTo: 'pages', pathMatch: 'full' },
+  { path: '**', redirectTo: 'pages' },
+
 ]
+
+const config: ExtraOptions = {
+  useHash: false,
+};
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled'})],

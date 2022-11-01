@@ -10,12 +10,17 @@ const routes: Routes = [
     component: TemplateAdminComponents,
     children: [
       {
-        path: '',
+        path: 'dashboard',
         component: HomeComponent,
       },
       {
         path: 'blog',
         component: BlogComponent,
+      },
+      {
+        path: '',
+        redirectTo: 'dashboard',
+        pathMatch: 'full',
       },
     ]
   },

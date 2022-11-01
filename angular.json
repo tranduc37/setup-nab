@@ -28,21 +28,19 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/bootstrap/dist/css/bootstrap.css",
-              "src/styles.scss",
-              "src/assets/css/app.min.css",
-              "src/assets/css/icons.min.css",
-              "src/assets/css/bootstrap.min.css"
+              "styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.css"
             ],
             "scripts": [
-              "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
-              "./node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "./node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/jquery/dist/jquery.min.js",
               "src/assets/js/app.js",
               "src/assets/libs/metismenu/metisMenu.min.js",
               "src/assets/libs/simplebar/simplebar.min.js",
               "src/assets/libs/node-waves/waves.min.js",
-              "src/assets/js/pages/dashboard.init.js"
+              "src/assets/js/pages/dashboard.init.js",
+              "src/assets/libs/jquery/jquery.min.js"
             ]
           },
           "configurations": {
